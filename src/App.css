@@ -1,0 +1,122 @@
+:root {
+    --color-base : #232136;
+    --color-surface : #2a273f;
+    --color-overlay : #393552;
+    --color-muted : #6e6a86;
+    --color-subtle : #908caa;
+    --color-text : #e0def4;
+    --color-love : #eb6f92;
+    --color-gold : #f6c177;
+    --color-rose : #ea9a97;
+    --color-pine : #3e8fb0;
+    --color-foam : #9ccfd8;
+    --color-iris : #c4a7e7;
+    --color-higlight-low : #2a283e;
+    --color-higlight-med : #44415a;
+    --color-higlight-high : #56526e;
+}
+
+.App {
+    text-align: center;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text);
+    background-color: var(--color-surface);
+}
+
+.name {
+    float: right;
+    margin-top: 20px;
+    margin-right: 40px;
+    margin-left: 40px;
+    font-size: 1.7rem;
+    cursor: default;
+}
+
+.header {
+    height: 7vh;
+    background: var(--color-base);
+    display: flex;
+}
+
+.container {
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    min-height: 100vh;
+    margin-top: 50px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+.showcase {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card {
+    display: block;
+    border-radius: 8px;
+}
+
+img { 
+    height: 40vh;
+    width: 10vw;
+    object-fit: fill;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+img:hover {
+    box-shadow: 0px 0px 2px 3px #777;
+    transform: scale(1.07);
+    transition: 0.3s ease-in;
+}
+
+.alert {
+  position: fixed;
+  left:50%;
+  transform: translate(-50%, -50%);
+  top: 40px;
+  place-items: center;
+  background-color: var(--color-pine);
+  color: var(--color-text);
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.alert.hide {
+  opacity: 0;
+}
+@media (pointer:coarse) {
+    img { 
+        height: 22vh;
+        width: 22vw;
+        object-fit: fill;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    .container {
+        background-color: var(--color-surface);
+        color: var(--color-text);
+        min-height: 100vh;
+        margin-top: 5px;
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+    .name {
+        float: right;
+        margin-top: 15px;
+        margin-right: 20px;
+        margin-left: 20px;
+        font-size: 1.4rem;
+        cursor: default;
+    }
+}
