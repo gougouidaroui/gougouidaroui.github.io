@@ -46,6 +46,13 @@ const ImageGallery = () => {
   const [alertMessage, setAlertMessage] = useState('');
 
   const handleAlertClose = () => setAlertMessage('');
+  const handleContextMenu = (e) => {
+    e.preventDefault();
+  };
+
+  const handleTouchStart = (e) => {
+    e.preventDefault();
+  };
 
   const imageElements = images.map((image, index) => {
     const imageUrl = image.default || image;  // Handle Webpack's default property
@@ -53,7 +60,7 @@ const ImageGallery = () => {
 
     return (
       <div key={index} className="card">
-        <a download={imageName} href={imageUrl}>
+        <a download={imageName} href={imageUrl} onContextMenu={handleContextMenu} onTouchStart={handleTouchStart}>
           <img
             src={imageUrl}
             alt={imageName}
