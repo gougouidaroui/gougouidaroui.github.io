@@ -32,6 +32,15 @@ const copyImageToClipboard = async (imageUrl, setAlertMessage) => {
       reader.readAsDataURL(blob);
 
       reader.onloadend = async () => {
+          try {
+              navigator.clipboard.write([
+                  new ClipboardItem({
+                      'image/png': lob
+                  })
+              ]);
+          } catch (error) {
+              console.error(error);
+          }
 
 
           setAlertMessage('Image started to download');
@@ -60,7 +69,6 @@ const ImageGallery = () => {
 
     return (
       <div key={index} className="card">
-        <a download={imageName} href={imageUrl} onContextMenu={handleContextMenu} onTouchStart={handleTouchStart}>
           <img
             src={imageUrl}
             alt={imageName}
